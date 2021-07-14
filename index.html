@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="assets/icon-ventana.png">
+    <link rel="shortcut icon" href="assets/icon-ventana.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600;0,700;0,900;1,600&display=swap"
       rel="stylesheet"
@@ -15,28 +17,26 @@
   </head>
 
   <body>
-    <div id="nav-bar">
-      <nav class="barra-navegacion">
-        <div class="contenedor">
-          <a href="/" class="logo">Leonel Dominguez</a>
-          <button class="menu-toggler">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div class="lista-navegacion">
-            <a href="/">Portafolio</a>
-            <a href="/">About</a>
-            <a href="/">Contact</a>
-          </div>
+    <nav class="navbar">
+      <div class="barra-navegacion">
+        <a href="/" class="logo">Leonel Dominguez</a>
+        <button class="menu-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="lista-navegacion">
+          <a href="">About</a>
+          <a href="">Portafolio</a>
+          <a href="">Contact</a>
         </div>
-      </nav>
-    </div>
-
-    <section id="type">
-      <div class="container posicion">
+      </div>
+    </nav>
+    <!-- Home -->
+    <section id="home">
+      <div class="container">
         <p>
-          C:\<span class="typed-text"></span><span class="cursor">&nbsp;</span>
+          C:\ <span class="typed-text"></span><span class="cursor">&nbsp;</span>
         </p>
       </div>
 
@@ -45,9 +45,25 @@
       </div>
     </section>
 
+    <!-- About -->
     <div id="about">
       <div class="title">about me.</div>
-      <div class="table"></div>
+      <div class="grid">
+        <div class="box a">
+          <p>
+            Hello, I'm Leonel Dominguez, I'm currently 20 years old, I'm a
+            systems engineering student at the Mariano Gálvez University, I live
+            in Guatemala. <br/><br/> 
+            This page is made to inform you about me, tell you
+            about my skills among other things.
+          </p>
+        </div>
+        <div class="box b">
+          I have skills and knowledge in java, javascript, html, css, github etc.
+        </div>
+        <div class="box c">This page is currently under construction.</div>
+        <div class="box d">I appreciate your patience, follow me on instagram. @laionel.exe</div>
+      </div>
     </div>
 
     <script src="main.js"></script>
