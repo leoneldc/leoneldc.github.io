@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap');
+:root {
+  --fondoNegro: rgb(0, 0, 0);
+  --fondoNegroSelected: rgb(37, 37, 37);
+  --fondoGris: rgb(52, 58, 64);
+  --fondoBlaco: rgb(255, 255, 255);
+  --letrasBlancas: rgb(255, 255, 255);
+	--sunset: #cae5f7;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--fondoGris);
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'nunito';
+}
+.contenedorPadre{
+  display: flex;
+}
+#contenedorHijo{
+  margin-left: 250px;
+  width: 100%;
+  height: 100vh;
+  background: url(assets/pexels-cottonbro-4571219.jpg) no-repeat center;
+  background-position: left;
+  background-size: cover;
+}
+.barraSuperiorHija{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.bloque{
+  height: 60px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.regresar{
+  margin-left: 100px;
+}
+.avanzar{
+  margin-left: 10px;
+}
+.avanzar, .regresar{
+  background: rgba(255, 255, 255, 0.473);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.avanzar:hover span, .regresar:hover span{
+  transition: all 500ms linear;
+  zoom: 2;
+}
+.user{
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.473);
+  margin-left: 55%;
+  cursor: pointer;
+  padding-right: 10px;
+}
+.user .nombre{
+  padding: 10px;
+}
+.nombre input{
+  width: 120px;
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-family: 'nunito';
+}
+.user img{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.user span{
+  position: absolute;
+  display: none;
+}
+.user:hover span{
+  display: contents;
+  align-items: center;
+  float: right;
+}
+.playlist{
+  margin-top: 40px;
+}
+.saludo h3{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  width: 25%;
+  color: white;
+}
+.listaPlaylist{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.playlistGuardada{
+  margin: 20px 20px 0 0;
+  width: 22.5%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.466);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.imagenesPlaylist img{
+  width: 80px;
+  height: 80px;
+  display: flex;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  object-fit: cover;
+}
+.derecha{
+  display: flex;
+  width: 100%;
+}
+.playlistGuardada p{
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlistGuardada span{
+  display: none;
+}
+.playlistGuardada:hover span{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: #81b71a;
+  width: 80px;
+  height: 80px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  opacity: 0.9;
+}
+#barra_lateral {
+  background: var(--fondoNegro);
+}
+.izq {
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+}
+.der {
+  top: 0;
+  left: 95%;
+  width: 5vw;
+  height: 100vh;
+}
+.espacio {
+  height: 50px;
+}
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tamaño {
+  width: 85%;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  border-radius: 61px;
+  opacity: 0.7;
+}
+.isSelected {
+  transition: all 500ms;
+  background: var(--fondoNegroSelected);
+  opacity: 1;
+}
+.tamaño:hover {
+  transition: all 500ms;
+  background: var(--fondoNegroSelected);
+  opacity: 1;
+}
+.material-icons-round {
+  color: white;
+}
+.item {
+  width: 100%;
+  margin-left: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.textoItem {
+  margin-left: 20px;
+  width: 100%;
+  color: var(--letrasBlancas);
+}
+.separador {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.separador hr {
+  width: 95%;
+  height: 1px;
+  background: white;
+  border-radius: 20px;
+}
+.grupoPlan{
+  position: fixed;
+  top: 90%;
+  width: 250px;
+  height: 25px;
+  background-color: var(--fondoNegro);
+}
+.tamaño2{
+  width: 100%;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  border-radius: 61px;
+  background: var(--fondoNegro);
+}
+.upgrade {
+  border: 2px solid white;
+  border-radius: 50px;
+  letter-spacing: 6px;
+  width: 200px;
+  
+}
+.upgrade:hover {
+  border: 2px solid greenyellow;
+}
+.listadoAmigos {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+}
+.amigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.amigo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20px;
+  border-radius: 61px;
+}
+.amigo span{
+  position: absolute;
+  display: none;
+  transition: all 1s linear ;
+}
+.amigo:hover span{
+  display: block;
+  border-radius: 100%;
+  width: auto;
+}
+.amigo .material-icons-round{
+  color: white;
+}
+.isConected img{
+  border: 2px solid greenyellow;
+  border-radius: 50px;
+}
+.isAusente img{
+  border: 2px solid orange;
+}
+.logo{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.logo img{
+  width: 55px;
+  height: 55px;
+}
+.der .separador {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.amigo:hover img{
+  transition: all 1.3s linear ;
+  transform: rotateZ(360deg);
+  opacity: 0.5;
+}

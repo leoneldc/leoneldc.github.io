@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="assets/spotifyLogo.png" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Spotify</title>
+  </head>
+
+  <body>
+    <div class="contenedorPadre">
+      <section id="contenedorHijo">
+        <div class="barraSuperiorHija">
+          <div class="bloque">
+            <div class="regresar">
+              <span class="material-icons-round"> chevron_left </span>
+            </div>
+            <div class="avanzar">
+              <span class="material-icons-round"> navigate_next </span>
+            </div>
+            <div class="user">
+              <div class="nombre">
+                <input
+                  type="text"
+                  name="nombre"
+                  placeholder="escribe tú usuario"
+                />
+              </div>
+              <div class="imagen isConected">
+                <img src="assets/user.png" alt="imagen de perfil" />
+              </div>
+              <span class="material-icons-round"> arrow_drop_down </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="playlist">
+          <div class="saludo"><h3 id="saludar"></h3></div>
+
+          <div class="listaPlaylist">
+            <div class="playlistGuardada">
+              <div class="imagenesPlaylist">
+                <span class="material-icons-round"> play_arrow </span>
+                <img src="assets/love.png" alt="" />
+              </div>
+              <p class="tituloPlaylist">Tú💖</p>
+            </div>
+
+            <div class="playlistGuardada">
+              <div class="imagenesPlaylist">
+                <span class="material-icons-round"> play_arrow </span>
+                <img src="assets/pinkFloyd.jpg" alt="" />
+              </div>
+              <p class="tituloPlaylist">Rock</p>
+            </div>
+
+            <div class="playlistGuardada">
+              <div class="imagenesPlaylist">
+                <span class="material-icons-round"> play_arrow </span>
+                <img src="assets/mood.jpg" alt="" />
+              </div>
+              <p class="tituloPlaylist">Mood</p>
+            </div>
+
+            <div class="playlistGuardada">
+              <div class="imagenesPlaylist">
+                <span class="material-icons-round"> play_arrow </span>
+                <img src="assets/rail_gate_by_bisbiswas_dehq31u.jpg" alt="" />
+              </div>
+              <p class="tituloPlaylist">Amikos</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="barra_lateral" class="izq">
+        <div class="espacio"></div>
+
+        <div class="grupo 1">
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> more_horiz </span>
+            </div>
+          </div>
+
+          <div class="tamaño isSelected">
+            <div class="item">
+              <span class="material-icons-round"> home </span>
+              <p class="textoItem">Inicio</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> search </span>
+              <p class="textoItem">Buscar</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> library_music </span>
+              <p class="textoItem">Biblioteca</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="separador">
+          <hr />
+        </div>
+
+        <div class="grupo 2">
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> playlist_add_circle </span>
+              <p class="textoItem">Crear playlist</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> favorite </span>
+              <p class="textoItem">Tus me gusta</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="separador">
+          <hr />
+        </div>
+
+        <div class="grupo 3">
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> graphic_eq </span>
+              <p class="textoItem">Lana del Rey👑</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> graphic_eq </span>
+              <p class="textoItem">Marea Local 🌊</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> graphic_eq </span>
+              <p class="textoItem">Bratty🥴</p>
+            </div>
+          </div>
+
+          <div class="tamaño">
+            <div class="item">
+              <span class="material-icons-round"> graphic_eq </span>
+              <p class="textoItem">Leonel Dominguez💻</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="espacio"></div>
+
+        <div class="grupoPlan">
+          <div class="tamaño2 upgrade">
+            <div class="item">
+              <span class="material-icons-round"> workspace_premium </span>
+              <p class="textoItem">PREMIUM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="barra_lateral" class="der">
+        <div class="logo">
+          <img src="assets/Spotify.png" alt="Spotify Logo" />
+        </div>
+
+        <div class="listadoAmigos">
+          <div class="amigo isConected">
+            <img src="assets/bratty.jpg" alt="Bratty" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+
+          <div class="separador">
+            <hr />
+          </div>
+          <div class="amigo isConected">
+            <img src="assets/marealocal.jpg" alt="Marea Local" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+
+          <div class="separador">
+            <hr />
+          </div>
+
+          <div class="amigo isAusente">
+            <img src="assets/tnbhd.jpg" alt="The Neighbourhood" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+
+          <div class="separador">
+            <hr />
+          </div>
+
+          <div class="amigo isAusente">
+            <img src="assets/badbunny.jpg" alt="Bad Bunny" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+
+          <div class="separador">
+            <hr />
+          </div>
+
+          <div class="amigo isAusente">
+            <img src="assets/edmaverick.jpg" alt="Ed Maverick" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+
+          <div class="separador">
+            <hr />
+          </div>
+
+          <div class="amigo isConected">
+            <img src="assets/ldr.jpg" alt="Lana del Rey" />
+            <span class="material-icons-round"> play_arrow </span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
