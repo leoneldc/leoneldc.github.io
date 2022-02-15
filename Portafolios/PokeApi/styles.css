@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;700;900&display=swap");
+:root {
+  --nb_fondo: #2c1f47;
+  --nb_letras: #ffffff;
+  --nb_selected: #5a4094;
+  --loading-grey: #ededed;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inconsolata", monospace;
+}
+.body{
+    overflow: hidden;
+}
+#barra_navegacion {
+  font-weight: 900;
+  width: 100%;
+  height: 10vh;
+  background: var(--nb_fondo);
+  position: fixed;
+  z-index: 100;
+}
+.contenedor_bn {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bn_logo {
+  display: flex;
+  margin-left: 5%;
+  color: var(--nb_letras);
+}
+.nombre_logo {
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--nb_letras);
+}
+.creador_logo {
+  font-size: 10px;
+  margin-left: 10px;
+  letter-spacing: 2pt;   
+  display: flex;
+  align-items: flex-end;
+}
+.bn_lista {
+  display: flex;
+  width: 50%;
+  gap: 125px;
+  margin-right: 5%;
+}
+.bn_lista a {
+  text-decoration: none;
+  color: var(--nb_letras);
+  padding: 10px 30px;
+}
+.bn_lista a:hover {
+  background: var(--nb_selected);
+  border-radius: 25px;
+  cursor: url(assets/mouse.png), auto;
+}
+.portada {
+  height: 100vh;
+  background: url(assets/fondo.svg) no-repeat center center fixed;
+  background-size: cover;
+}
+.introduccion {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--nb_letras);
+  cursor: url(assets/mouse2.png), auto;
+}
+.informacion{
+    padding-top: 10vh;
+    margin: 20px 50px;
+}
+.informacion h1 {
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.informacion a {
+  color: var(--nb_letras);
+  cursor: url(assets/mouse.png), auto;
+}
+.img {
+  height: 250px;
+  gap: 3.5vw;
+  overflow: hidden;
+  display: flex;
+  justify-self: center;
+  z-index: 0;
+}
+.img h4 {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 5pt;   
+  margin-top: 5px;
+}
+.imagenes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagenes img {
+  height: 200px;
+}
+main{
+    width: 100%;
+    background: var(--nb_fondo);
+}
+.lista_pokemon h1{
+    font-weight: 200;
+    padding-top: 10vh;
+    color: white;
+    text-align: center;
+    letter-spacing: 10px;
+}
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 20%;
+    gap: 20px;
+    width: 100%;
+}
+.carta{
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(237, 166, 247, 0.371);
+    box-shadow: 0px 0px 10px #ffffff;
+}
+.carta .imagen{
+    width: 100%;
+}
+.carta .imagen img{
+    width: 100%;
+    height: 100%;
+}
+.identificador{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 5px;
+    gap: 20px;
+    box-shadow: 0px 0px 10px #000000;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.identificador .id{
+    font-weight: 600;
+    border-radius: 25px;
+}
+.identificador .nombre{
+    font-weight: 600;
+    border-radius: 25px;
+    text-align: center;
+}
+.identificador img{
+    width: 20px;
+    height: 20px;
+}
