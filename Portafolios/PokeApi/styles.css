@@ -4,6 +4,9 @@
   --nb_letras: #ffffff;
   --nb_selected: #5a4094;
   --loading-grey: #ededed;
+  --main_background: #FFFFFF;
+  --pika_cursor: url(assets/mouse2.png);
+  --ball_cursor: url(assets/mouse.png);
 }
 * {
   margin: 0;
@@ -60,7 +63,7 @@
 .bn_lista a:hover {
   background: var(--nb_selected);
   border-radius: 25px;
-  cursor: url(assets/mouse.png), auto;
+  cursor: var(--ball_cursor), auto;
 }
 .portada {
   height: 100vh;
@@ -75,7 +78,7 @@
   justify-content: center;
   align-items: center;
   color: var(--nb_letras);
-  cursor: url(assets/mouse2.png), auto;
+  cursor: var(--pika_cursor), auto;
 }
 .informacion{
     padding-top: 10vh;
@@ -114,65 +117,92 @@
 }
 main{
     width: 100%;
+    padding: 50px;
     background: var(--nb_fondo);
 }
-.lista_pokemon h1{
-    font-weight: 200;
-    padding-top: 10vh;
-    color: white;
-    text-align: center;
-    letter-spacing: 10px;
+.titulo{
+  font-size: 60px;
+  letter-spacing: 30px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
 }
-.contenedor{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 5% 20%;
-    gap: 20px;
-    width: 100%;
+.lista_pokemon{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px 35px; 
 }
 .carta{
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-    background: rgba(237, 166, 247, 0.371);
-    box-shadow: 0px 0px 10px #ffffff;
+  width: 300px;
+  height: 400px;
+  border: 2px solid var(--nb_fondo);
+  box-shadow: 0 0 5px rgb(0,0,0);
+  border-radius: 35px;
 }
 .carta .imagen{
-    width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.carta .imagen img{
-    width: 100%;
-    height: 100%;
+.img_pokemon{
+  margin-top: 25px;
+  width: 200px;
+  height: 200px;
 }
-.identificador{
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    padding: 5px;
-    gap: 20px;
-    box-shadow: 0px 0px 10px #000000;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.carta .datos{
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 20px;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.identificador .id{
-    font-weight: 600;
-    border-radius: 25px;
+.datos .nombre{
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-align: center;
 }
-.identificador .nombre{
-    font-weight: 600;
-    border-radius: 25px;
-    text-align: center;
+.datos .id{
+  font-weight: 600;
+  text-align: center;
+  background: var(--nb_selected);
+  padding: 5px 10px;
+  border-radius: 25px;
+  color: white;
+  cursor: var(--ball_cursor), auto;
 }
-.identificador img{
-    width: 20px;
-    height: 20px;
+.tipos{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.tipos span{
+  padding: 5px 20px;
+  border-radius: 25px;
+  border: 2px solid var(--nb_fondo);
+  box-shadow: 0 0 10px rgb(0,0,0);
+  color: white;
+  font-weight: 900;
+}
+.placeholder{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #b3b3b3;
+  background: linear-gradient(to right, rgba(237, 166, 247, 0.371), #ccc);
+  background-size: 200% 100%;
+  border-radius: 25px;
+  animation: anmBg 1s linear 3;
+}
+@keyframes anmBg {
+  to {
+    background-position: -170% 0;
+  }
 }

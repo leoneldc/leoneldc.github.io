@@ -1,5 +1,7 @@
 const pokemonAlAzar = document.querySelector(".img");
-const listaPokemon = document.querySelector(".contenedor");
+const contenedorLista = document.querySelector(".lista_pokemon");
+
+
 const colors = {
   fire: "#FFA05D",
   grass: "#8FD594",
@@ -14,92 +16,145 @@ const colors = {
   flying: "#CDCDCD",
   fighting: "#FF5D5D",
   normal: "#FFFFFF",
+  fairy: "#F2AFF8",
+  ice: "#4AEFFE",
+  steel: "#F2D2F5",
+  dark: "#6F6F6F",
+  ghost: "#6F6F6F",
+};
+const colorsLetras = {
+  fire: "#000000",
+  grass: "#000000",
+  electric: "#000000",
+  water: "#FFFFFF",
+  ground: "#000000",
+  rock: "#FFFFFF",
+  poison: "#FFFFFF",
+  bug: "#000000",
+  dragon: "#000000",
+  psychic: "#FFFFFF",
+  flying: "#000000",
+  fighting: "#000000",
+  normal: "#000000",
+  fairy: "#000000",
+  ice: "#000000",
+  steel: "#000000",
+  dark: "#FFFFFF",
+  ghost: "#FFFFFF",
 };
 function generaciones(gen) {
   const pokemonGen = {
-    1: [0, 151],
+    1: [1, 151],
     2: [152, 251],
     3: [252, 386],
+    4: [387, 493],
+    5: [493, 649],
+    6: [650, 721],
+    7: [722, 809],
+    8: [810, 890],
   };
-  const generacion = pokemonGen[gen] ;
+  const generacion = pokemonGen[gen];
   return generacion;
 }
-var busquedaInicio = 1;
-async function listadoRandom(){
-  const jsnCount = await fetch("https://pokeapi.co/api/v2/pokemon/")
-  const data = await jsnCount.json()
-  return data.count
-}
-function randomPokemon(){ 
-  const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=`;
-    listadoRandom()
-      .then(async function (data) {
-        const jsn = await fetch(`${url}${data}`);
-        const dataJsn = await jsn.json();
-        const pokemons = dataJsn.results;
-        const random = Math.floor(Math.random() * pokemons.length);
-        var urlRandom = pokemons[random].url;
-        return urlRandom;
-      })
-      .then(async function (response) {
-        pokemonAlAzar.innerHTML = "";
-        const p = document.createElement("div");
-        const jsn = await fetch(`${response}`);
-        const dataJsn = await jsn.json();
-        const nombre = dataJsn.name.split("-").join(" ");
-        const urlImg = dataJsn.sprites.front_default;
-        const urlShiny = dataJsn.sprites.front_shiny;
-        if (urlImg != null) {
-          var divImgs = `<div class="imagenes"><img src="${urlImg}" alt="${nombre}">`;
-          if (urlShiny != null) {
-            divImgs += `<img src="${urlShiny}" alt="${nombre}"></div>`;
-          } else {
-            divImgs += `</div>`;
-          }
-          p.innerHTML += `${divImgs}<h4>${nombre.toUpperCase()}</h4>`;
-          pokemonAlAzar.appendChild(p);
-        } else {
-          randomPokemon();
-        }
-      }); 
-}
-randomPokemon();
-
 const main_types = Object.keys(colors);
-async function listadoPokemon(inicio, fin){
-  const url = `https://pokeapi.co/api/v2/pokemon/?offset=${inicio}&limit=${fin}`;
-  const jsn = await fetch(`${url}`);
-  const dataJsn = await jsn.json();
-  const pokemons = dataJsn.results;
-  return pokemons;
-}
-function mostrarListas(inicio, fin) {
-  listadoPokemon(inicio,fin).then(function (data) {
-    data.map(async function (pokemon) {
-      const jsn = await fetch(`${pokemon.url}`);
-      const dataJsn = await jsn.json();
 
-      const carta = document.createElement("div");
-      var id = '';
-      if (dataJsn.id < 10) id=`00${dataJsn.id}`;
-      if (dataJsn.id >9 && dataJsn.id < 100) id = `0${dataJsn.id}`;
-      if (dataJsn.id >99) id = `${dataJsn.id}`;
-	    const poke_types = dataJsn.types.map((type) => type.type.name);
-      const type = main_types.find((type) => poke_types.indexOf(type) > -1);
-      const color = colors[type];
-      var nombre = dataJsn.name.split("-").join(" ");
-      carta.setAttribute("class", "carta");
-      carta.style.backgroundColor = color;
-      var mostrarPokemon = `<div class="imagen"><img src="${dataJsn.sprites.front_default}" alt="${nombre}"></div>
-                              <div class="identificador">
-                                <div class="id">${id}</div>
-                                <img src="assets/pokeball.svg" alt="pokeball">
-                                <div class="nombre">${nombre}</div>
-                              </div>`;
-      carta.innerHTML = mostrarPokemon;        
-      listaPokemon.appendChild(carta);
-    });
-  });
+async function listadoRandom() {
+  const jsnCount = await fetch("https://pokeapi.co/api/v2/pokemon/");
+  const data = await jsnCount.json();
+  return data.count;
 }
+function randomPokemon() {
+  const url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=`;
+  listadoRandom()
+    .then(async function (data) {
+      const jsn = await fetch(`${url}${data}`);
+      const dataJsn = await jsn.json();
+      const pokemons = dataJsn.results;
+      const random = Math.floor(Math.random() * pokemons.length);
+      var urlRandom = pokemons[random].url;
+      return urlRandom;
+    })
+    .then(async function (response) {
+      pokemonAlAzar.innerHTML = "";
+      const p = document.createElement("div");
+      const jsn = await fetch(`${response}`);
+      const dataJsn = await jsn.json();
+      const nombre = dataJsn.name.split("-").join(" ");
+      const urlImg = dataJsn.sprites.front_default;
+      const urlShiny = dataJsn.sprites.front_shiny;
+      if (urlImg != null) {
+        var divImgs = `<div class="imagenes"><img src="${urlImg}" alt="${nombre}">`;
+        if (urlShiny != null) {
+          divImgs += `<img src="${urlShiny}" alt="${nombre}"></div>`;
+        } else {
+          divImgs += `</div>`;
+        }
+        p.innerHTML += `${divImgs}<h4>${nombre.toUpperCase()}</h4>`;
+        pokemonAlAzar.appendChild(p);
+      } else {
+        randomPokemon();
+      }
+    });
+}
+
+async function cargarURLS(pokemon) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+  const respuesta = await fetch(url)
+  const pokemonData = await respuesta.json();
+  
+  const divCarta = document.createElement("div");
+  const divImagen = document.createElement("div");
+  const divDatos = document.createElement("div");
+  const divTipos = document.createElement("div");
+
+  divCarta.classList.add("carta");
+  divImagen.classList.add("imagen");
+  divDatos.classList.add("datos");
+  divTipos.classList.add("tipos");
+
+  var id = ''
+  var nombre = pokemonData.name.split("-").join(" ");
+  var imagen = ""
+  var tipo = ""
+  var datosFormato = ''
+
+  if (pokemonData.id < 10) id = `00${pokemonData.id}`;
+  if (pokemonData.id > 9 && pokemonData.id < 100) id = `0${pokemonData.id}`;
+  if (pokemonData.id > 99) id = `${pokemonData.id}`;
+  
+  pokemonData.types.map((types) => {
+    tipo += `<span style="background-color: ${colors[types.type.name]}; color: ${colorsLetras[types.type.name]};">
+    ${types.type.name}</span>`;
+  
+    datosFormato = `<div style="color: ${colorsLetras[types.type.name]};"  class="nombre">${nombre.toUpperCase()}</div>
+                      <div class="id">${id}</div>`;
+  })
+
+  const poke_types = pokemonData.types.map((type) => type.type.name);
+  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
+  const color = colors[type];
+  divCarta.style.backgroundColor = color;
+
+  if (pokemonData.sprites.other.dream_world.front_default===null) {
+    imagen = `<img src="${pokemonData.sprites.front_default}" alt="${nombre}" class="img_pokemon">`;
+  }else{
+    imagen = `<img src="${pokemonData.sprites.other.dream_world.front_default}" alt="${nombre}" class="img_pokemon">`;
+  }
+  divDatos.innerHTML = `${datosFormato}`;
+  divTipos.innerHTML = `${tipo}`;
+  divImagen.innerHTML = `${imagen}`;
+  divCarta.appendChild(divImagen);
+  divCarta.appendChild(divDatos);
+  divCarta.appendChild(divTipos);
+  contenedorLista.appendChild(divCarta);
+}
+function indicarURL(generacion) {
+  for (let id = generacion[0]; id <= generacion[1]; id++) {
+    cargarURLS(id);
+  }
+}
+
+
 let pokemonGeneration = generaciones(1);
-mostrarListas(pokemonGeneration[0], pokemonGeneration[1]);
+randomPokemon();
+indicarURL(pokemonGeneration);
