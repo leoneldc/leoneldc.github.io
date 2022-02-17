@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;500;700;900&display=swap");
 :root {
   --nb_fondo: #2c1f47;
   --nb_letras: #ffffff;
@@ -138,20 +138,22 @@ main{
 .carta{
   width: 300px;
   height: 400px;
-  border: 2px solid var(--nb_fondo);
-  box-shadow: 0 0 5px rgb(0,0,0);
+  border: 2px solid var(--main_background);
+  box-shadow: 0 0 15px rgb(255, 255, 255);
   border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.carta .imagen{
+.contenedor .imagen{
   display: flex;
   justify-content: center;
 }
 .img_pokemon{
-  margin-top: 25px;
   width: 200px;
   height: 200px;
 }
-.carta .datos{
+.contenedor .datos{
   margin-top: 10px;
   padding: 20px;
   font-size: 20px;
@@ -188,6 +190,23 @@ main{
   color: white;
   font-weight: 900;
 }
+.descripcion{
+  font-size: 20px;
+  display: none;
+  opacity: 0;
+  font-weight: 500;
+}
+.carta:hover .descripcion{
+  opacity: 1;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: var(--pika_cursor), auto;
+}
+.carta:hover .datos, .carta:hover .imagen, .carta:hover .tipos{
+  display: none;
+} 
 .placeholder{
   width: 220px;
   display: flex;

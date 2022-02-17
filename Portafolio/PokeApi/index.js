@@ -1,7 +1,6 @@
 const pokemonAlAzar = document.querySelector(".img");
 const contenedorLista = document.querySelector(".lista_pokemon");
 
-
 const colors = {
   fire: "#FFA05D",
   grass: "#8FD594",
@@ -51,7 +50,8 @@ function generaciones(gen) {
     5: [493, 649],
     6: [650, 721],
     7: [722, 809],
-    8: [810, 890],
+    8: [810, 898],
+    9: [10001, 10228],
   };
   const generacion = pokemonGen[gen];
   return generacion;
@@ -97,25 +97,42 @@ function randomPokemon() {
     });
 }
 
+
+async function cargarDescripcion(url) {
+  const respuesta = await fetch(url);
+  const pokemonData = await respuesta.json();
+  var descripciones = []
+  pokemonData.flavor_text_entries.map((descripcion) => {
+    if (descripcion.language.name == "es") {
+      descripciones.push(descripcion.flavor_text);
+    }
+  });
+  return descripciones[Math.floor(Math.random() * descripciones.length)];
+}
 async function cargarURLS(pokemon) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
   const respuesta = await fetch(url)
   const pokemonData = await respuesta.json();
-  
+
   const divCarta = document.createElement("div");
   const divImagen = document.createElement("div");
   const divDatos = document.createElement("div");
   const divTipos = document.createElement("div");
-
+  const divDescripcion = document.createElement("div");
+  const divContenedor = document.createElement("div");
+  
+  divContenedor.classList.add("contenedor");
   divCarta.classList.add("carta");
   divImagen.classList.add("imagen");
   divDatos.classList.add("datos");
   divTipos.classList.add("tipos");
+  divDescripcion.classList.add("descripcion");
 
   var id = ''
   var nombre = pokemonData.name.split("-").join(" ");
   var imagen = ""
   var tipo = ""
+  var descripcion = ''
   var datosFormato = ''
 
   if (pokemonData.id < 10) id = `00${pokemonData.id}`;
@@ -128,24 +145,32 @@ async function cargarURLS(pokemon) {
   
     datosFormato = `<div style="color: ${colorsLetras[types.type.name]};"  class="nombre">${nombre.toUpperCase()}</div>
                       <div class="id">${id}</div>`;
+    divDescripcion.style.color = colorsLetras[types.type.name];
   })
 
   const poke_types = pokemonData.types.map((type) => type.type.name);
   const type = main_types.find((type) => poke_types.indexOf(type) > -1);
   const color = colors[type];
   divCarta.style.backgroundColor = color;
-
+  
+  cargarDescripcion(pokemonData.species.url).then((data) => {
+    descripcion= `<p>${data.split("\n").join(" ")}</p>`;
+    divDescripcion.innerHTML = descripcion;
+  });
   if (pokemonData.sprites.other.dream_world.front_default===null) {
     imagen = `<img src="${pokemonData.sprites.front_default}" alt="${nombre}" class="img_pokemon">`;
   }else{
     imagen = `<img src="${pokemonData.sprites.other.dream_world.front_default}" alt="${nombre}" class="img_pokemon">`;
   }
+
   divDatos.innerHTML = `${datosFormato}`;
   divTipos.innerHTML = `${tipo}`;
   divImagen.innerHTML = `${imagen}`;
-  divCarta.appendChild(divImagen);
-  divCarta.appendChild(divDatos);
-  divCarta.appendChild(divTipos);
+  divContenedor.appendChild(divImagen);
+  divContenedor.appendChild(divDatos);
+  divContenedor.appendChild(divTipos);
+  divContenedor.appendChild(divDescripcion);
+  divCarta.appendChild(divContenedor);
   contenedorLista.appendChild(divCarta);
 }
 function indicarURL(generacion) {
