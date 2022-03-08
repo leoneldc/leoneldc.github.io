@@ -96,11 +96,7 @@ button.onclick = async function() {
           }; 
                 color: ${colorsLetras[types.type.name]}; border: 2px solid ${
             colorsLetras[types.type.name]
-          }; 
-                box-shadow: 0 0 5px ${colorsLetras[type]};";>${
-            types.type.name
-          }</div>`;
-        });
+          };";>${types.type.name}</div>`;});
 
         divCarta.style.backgroundColor = colors[type];
         divNombre.style.backgroundColor = colors[type];

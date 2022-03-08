@@ -19,6 +19,16 @@ header {
     width: 100vw;
     position: fixed;
 }
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgb(241, 241, 241);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--hearder_fondo);
+}
 .navbar{
     padding: 20px;
     width: 100%;
@@ -42,7 +52,7 @@ header {
     color: var(--header_letras);
 }
 .buscador{
-    height: 27vh;
+    height: 30vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -95,26 +105,37 @@ header {
     cursor: pointer;
 }
 .pokemon{
-    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0 15%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .carta{
-    margin: 25px 25px 0 25px;
+    max-width: 1000px;
     border-radius: 15px;
     background: var(--nb_selected);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
+    justify-content: center;
     display: flex;
     flex-direction: row;
 }
 .poke-imagen{
-    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .poke-imagen img{
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 400px;
+}
+.informacion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 30px 0 0;
 }
 .poke-datos{
     margin-top: 20px;
@@ -125,6 +146,7 @@ header {
 .poke-datos .nombre, .poke-datos .id{
     padding: 3px 5px;
     border-radius: 15px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,19 +165,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: white;
-    color: black;
 }
 .tipo{
     padding: 3px 5px;
     border-radius: 15px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .poke-descripcion{
     margin:15px;
-    font-size: 13px;
+    font-size: 18px;
     text-align: justify;
 }
 .grupoStats{
@@ -172,11 +193,13 @@ header {
 .titulo-stat{
     width: 50%;
     margin-right: 5px;
+    font-size: 17px;
     font-weight: 700;
 }
 .valor-stat{
     width: 50%;
     margin-right: 5px;
+    font-size: 17px;
     font-weight: 500;
     text-align: right;
 }
@@ -197,12 +220,51 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
     background-color: #8af8f3 !important;
 }
-@media (max-width: 500px) {
+
+@media (max-width: 1000px) and (min-width: 781px) {       
+    .poke-imagen img{
+        width: 250px;
+        height: 250px;
+    }
+    .poke-imagen{
+        width: 60%;
+    }
+}
+
+@media (max-width: 780px) {
     .grupoBotones input[type="text"]{
         width: 80%;
     }
-        
+    .pokemon{
+        overflow: hidden;
+    }
     .carta{
         flex-direction: column;
     }
+    .poke-imagen{
+        width: 100%;
+    }
+    .poke-imagen img{
+        width: 150px;
+        height: 150px;
+    }
+    .poke-descripcion{
+        font-size: 13px;
+    }
+    .poke-datos .nombre, .poke-datos .id{
+        font-size: 15px;
+    }    
+    .poke-tipos span{
+        font-size: 15px;
+    }
+    .titulo-stat{
+        font-size: 13px;
+    }
+    .valor-stat{
+        font-size: 13px;
+    }
+    .pokemon{
+        margin: 15px;
+    }
+    
 }
