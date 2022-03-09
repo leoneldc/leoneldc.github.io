@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="assets/icon-url.png">
     <title>Pokedex</title>
 </head>
-<body>
+<body onload="ejemplo()">
     
     <header>
         <nav class="navbar">
@@ -23,9 +23,10 @@
         <div class="buscador">
             <div class="contenedor">
                 <div class="titulo">POKEDEX</div>
+                <div class="nota">Los nombres compuestos como: zygarde complete, escriblo de las siguiente manera: zygarde-complete</div>
                 <div class="descripcion">¿Encontrarás a tu pokemon aquí?</div>
                 <div class="grupoBotones">
-                    <input type="text" name="pokeBusqueda" id="parametro" placeholder="escribe el nombre o id aquí...">
+                    <input type="text" required name="pokeBusqueda" id="parametro" placeholder="escribe el nombre o id aquí...">
                     <button type="button" id="btnBuscar">
                         <span class="material-icons-outlined">
                             search
