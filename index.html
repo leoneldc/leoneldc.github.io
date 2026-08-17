@@ -1,32 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <section class="hero">
-    <div class="hero_content">
-      <div class="hero_title-row">
-        <div class="hero_avatar" aria-hidden="true">
-          <img src="./assets/img/avatar.png" alt="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leonel Dominguez</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero_content">
+          <div class="hero_title-row">
+            <div class="hero_avatar" aria-hidden="true">
+              <img src="./assets/img/avatar.png" alt="" />
+            </div>
+            <h1>Hola, soy <span>Leonel Dominguez</span></h1>
+          </div>
+
+          <p class="hero_text">
+            +5 años de experiencia, <strong>Ingeniero en Sistemas</strong> y
+            <strong>Catedrático</strong> en la Universidad Mariano Gálvez de
+            Guatemala. Especializado en el desarrollo de aplicaciones web
+            únicas.
+          </p>
+
+          <div class="hero_actions">
+            <a href="#" class="hero_button hero_button--primary">Contactame</a>
+            <a href="#" class="hero_button">LinkedIn</a>
+            <a href="#" class="hero_button">GitHub</a>
+          </div>
         </div>
-        <h1>Hola, soy <span>Leonel Dominguez</span></h1>
-      </div>
+      </section>
 
-      <p class="hero_text">
-        +5 años de experiencia, <strong>Ingeniero en Sistemas</strong> y <strong>Catedrático</strong> en la
-        Universidad Mariano Gálvez de Guatemala. Especializado en el desarrollo de aplicaciones web únicas.
-      </p>
+      <section class="section experience" aria-labelledby="experience-title">
+        <div class="section_heading">
+          <h2 id="experience-title">Experiencia laboral</h2>
+        </div>
 
-      <div class="hero_actions">
-        <a href="#" class="hero_button hero_button--primary">Contactame</a>
-        <a href="#" class="hero_button">LinkedIn</a>
-        <a href="#" class="hero_button">GitHub</a>
-      </div>
-    </div>
-  </section>
-</body>
+        <div class="experience_list">
+          <article class="experience_item">
+            <div class="experience_marker" aria-hidden="true"></div>
+            <div class="experience_summary">
+              <h3>Docente</h3>
+              <p class="experience_place">
+                Universidad Mariano Gálvez de Guatemala
+              </p>
+              <p class="experience_date">Julio 2026 - Actualidad</p>
+            </div>
+            <div class="experience_detail">
+              <p>
+                Impartiendo el curso de <strong>Desarrollo Web</strong> para la
+                Facultad de Ingeniería, Matemática y Ciencias Físicas.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience_item">
+            <div class="experience_marker" aria-hidden="true"></div>
+            <div class="experience_summary">
+              <h3>Ingeniero en Sistemas</h3>
+              <p class="experience_place">
+                Instituto de Investigación de Ingeniería Matemática y Ciencias
+                Físicas
+              </p>
+              <p class="experience_date">Enero 2025 - Actualidad</p>
+            </div>
+            <div class="experience_detail">
+              <p>
+                Lidero en la planificación, diseño y desarrollo de múltiples
+                sistemas web para la automatización de procesos académicos e
+                institucionales.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience_item">
+            <div class="experience_marker" aria-hidden="true"></div>
+            <div class="experience_summary">
+              <h3>Soporte de Redes</h3>
+              <p class="experience_place">ITS Infocom</p>
+              <p class="experience_date">2024</p>
+            </div>
+            <div class="experience_detail">
+              <p>
+                Soporte de primer nivel mediante la gestión y seguimiento de
+                tickets de incidencias para clientes empresariales.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience_item">
+            <div class="experience_marker" aria-hidden="true"></div>
+            <div class="experience_summary">
+              <h3>Desarrollo Web</h3>
+              <p class="experience_place">
+                Instituto de Investigación de Ingeniería Matemática y Ciencias
+                Físicas
+              </p>
+              <p class="experience_date">Junio 2024 - Mayo 2025</p>
+            </div>
+            <div class="experience_detail">
+              <p>
+                Desarrollo de una aplicación móvil para la visualización de
+                información sismológica en tiempo real e histórica.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section projects" aria-labelledby="projects-title">
+        <div class="section_heading">
+          <h2 id="projects-title">Proyectos</h2>
+        </div>
+
+        <div class="projects_list">
+          <article class="project_card">
+            <figure class="project_media">
+              <img
+                src="./assets/img/proyecto-1.png"
+                alt="Vista previa del proyecto Facultad de Ingeniería, Matemática y Ciencias Físicas"
+              />
+            </figure>
+            <div class="project_content">
+              <h3>Facultad de Ingeniería, Matemática y Ciencias Físicas</h3>
+              <p>
+                Rediseño del sitio web, mejorando el rendimiento, incremento de
+                trafico de usuarios.
+              </p>
+            </div>
+          </article>
+
+          <article class="project_card">
+            <figure
+              class="project_media project_media--placeholder"
+              aria-label="Vista previa del proyecto FaculInstituto de Investigación de Ingeniería, Matemática y Ciencias Físicas"
+            ></figure>
+            <div class="project_content">
+              <h3>
+                Instituto de Investigación de Ingeniería, Matemática y Ciencias
+                Físicas
+              </h3>
+              <p>
+                Rediseño del sitio web, mejorando el rendimiento, incremento de
+                trafico de usuarios.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
